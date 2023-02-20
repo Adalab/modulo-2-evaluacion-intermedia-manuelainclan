@@ -10,22 +10,25 @@ console.log(numberRandom);
 
 
 //funciones
+function writeMsj (msj) {
+    clue.innerHTML = msj;
+}
 
 function playNumber() {
-let numberPlay = numberUser.value;
-    if (numberPlay.parseInt === numberRandom.parseInt) {
-        clue.innerHTML = "Has ganado campeona!!!";
-    }
-    if (numberPlay > numberRandom) {
-        clue.innerHTML = "Demasiado alto";
-    }
-    if (numberPlay < numberRandom) {
-        clue.innerHTML = "Demasiado bajo";
-    }
-    if (numberPlay < 1 || numberPlay > 100 ) {
-        clue.innerHTML = "El número debe estar entre 1 y 100";
-    }
+const numberPlay = parseInt(numberUser.value);
 
+    if (numberPlay < 1 || numberPlay > 100 ) {
+        writeMsj ("El número debe estar entre 1 y 100");
+    }
+    else if (numberPlay === numberRandom) {
+        writeMsj("Has ganado campeona!!!");
+    }
+    else if (numberPlay > numberRandom) {
+        writeMsj ("Demasiado alto");
+    }
+    else if  (numberPlay < numberRandom) {
+        writeMsj ("Demasiado bajo");
+    }
 }
 
 function countTries() {
