@@ -18,8 +18,6 @@ function writeMsj (msj) {
 function playNumber() {
 const numberPlay = parseInt(numberUser.value);
      
-    
-    
     if (!numberPlay) {
         writeMsj ("Tienes que escribir un número para jugar");
     } else if  (numberPlay < 1 || numberPlay > 100 ) {
@@ -49,7 +47,6 @@ function handleClickButton (event) {
     event.preventDefault();
     playNumber();
 }
-
 
 //eventos
 
