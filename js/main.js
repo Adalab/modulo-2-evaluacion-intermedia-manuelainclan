@@ -17,19 +17,23 @@ function writeMsj (msj) {
 
 function playNumber() {
 const numberPlay = parseInt(numberUser.value);
-
-    if (numberPlay < 1 || numberPlay > 100 ) {
+     
+    
+    
+    if (!numberPlay) {
+        writeMsj ("Tienes que escribir un número para jugar");
+    } else if  (numberPlay < 1 || numberPlay > 100 ) {
         writeMsj ("El número debe estar entre 1 y 100");
-    }
-    else if (numberPlay === numberRandom) {
+        countTries();
+    } else if (numberPlay === numberRandom) {
         writeMsj("Has ganado campeona!!!");
-    }
-    else if (numberPlay > numberRandom) {
+    } else if (numberPlay > numberRandom) {
         writeMsj ("Demasiado alto");
-    }
-    else if  (numberPlay < numberRandom) {
+        countTries();
+    }else if  (numberPlay < numberRandom) {
         writeMsj ("Demasiado bajo");
-    }
+        countTries();
+    } 
 }
 
 function countTries() {
@@ -44,7 +48,6 @@ return Math.ceil(Math.random() * max);
 function handleClickButton (event) {
     event.preventDefault();
     playNumber();
-    countTries();
 }
 
 
