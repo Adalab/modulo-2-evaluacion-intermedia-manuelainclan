@@ -7,6 +7,7 @@ const button = document.querySelector('.js-button');
 const main = document.querySelector('.js-main');
 const numberRandom = getRandomNumber(100);
 console.log(numberRandom);
+let count = 1;
 
 
 //funciones
@@ -32,9 +33,7 @@ const numberPlay = parseInt(numberUser.value);
 }
 
 function countTries() {
-    tries.innerHTML = 'Número de intentos: ' + handleClickButton.detail;
-
-  
+    tries.innerHTML = `Número de intentos:${count++}`;
 }
 
 function getRandomNumber(max) {
@@ -46,7 +45,6 @@ function handleClickButton (event) {
     event.preventDefault();
     playNumber();
     countTries();
-    console.log(event);
 }
 
 
